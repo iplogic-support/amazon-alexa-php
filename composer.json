@@ -23,13 +23,18 @@
   ],
   "license": "MIT",
   "support": {
-    "issues": "https://github.com/maxbeckers/amazon-alexa-php/issues",
-    "source": "https://github.com/maxbeckers/amazon-alexa-php"
+    "issues": "https://github.com/iplogic-support/amazon-alexa-php/issues",
+    "source": "https://github.com/iplogic-support/amazon-alexa-php"
   },
   "authors": [
     {
       "name": "Maximilian Beckers",
       "email": "beckers.maximilian@gmail.com",
+      "role": "Developer"
+    },
+    {
+      "name": "KUDO Takashi",
+      "email": "takashi@iplogic.co.jp",
       "role": "Developer"
     }
   ],
