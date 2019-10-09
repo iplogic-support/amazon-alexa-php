@@ -13,6 +13,11 @@ class UserPermissions
     public $consentToken;
 
     /**
+     * @var array
+     */
+    public $scopes;
+
+    /**
      * @param array $amazonRequest
      *
      * @return UserPermissions
@@ -22,6 +27,7 @@ class UserPermissions
         $userPermissions = new self();
 
         $userPermissions->consentToken = isset($amazonRequest['consentToken']) ? $amazonRequest['consentToken'] : null;
+        $userPermissions->scopes = isset($amazonRequest['scopes']) ? $amazonRequest['scopes'] : [];
 
         return $userPermissions;
     }

@@ -17,10 +17,12 @@ class Card implements \JsonSerializable
     const PERMISSION_FULL_ADDRESS                   = 'read::alexa:device:all:address';
     const PERMISSION_COUNTRY_REGION_AND_POSTAL_CODE = 'read::alexa:device:all:address:country_and_postal_code';
     const PERMISSION_GEOLOCATION                    = 'alexa::devices:all:geolocation:read';
+    const PERMISSION_AMAZON_PAY                     = 'payments:autopay_consent';
     const PERMISSIONS                               = [
         self::PERMISSION_FULL_ADDRESS,
         self::PERMISSION_COUNTRY_REGION_AND_POSTAL_CODE,
         self::PERMISSION_GEOLOCATION,
+        self::PERMISSION_AMAZON_PAY,
     ];
 
     /**

@@ -27,6 +27,11 @@ class Payload
      */
     public $message;
 
+    // XXX TODO: AmazonPay対応。クラスを分けるべき。
+    public $billingAgreementDetails;
+    public $amazonOrderReferenceId;
+    public $authorizationDetails;
+
     /**
      * @param array $amazonRequest
      *
@@ -34,12 +39,19 @@ class Payload
      */
     public static function fromAmazonRequest(array $amazonRequest): self
     {
-        $status = new self();
+        $payload = new self();
 
-        $status->purchaseResult = isset($amazonRequest['purchaseResult']) ? $amazonRequest['purchaseResult'] : null;
-        $status->productId      = isset($amazonRequest['productId']) ? $amazonRequest['productId'] : null;
-        $status->message        = isset($amazonRequest['message']) ? $amazonRequest['message'] : null;
+        // FYI: https://developer.amazon.com/ja/docs/in-skill-purchase/add-isps-to-a-skill.html#handle-results
+        $payload->purchaseResult = isset($amazonRequest['purchaseResult']) ? $amazonRequest['purchaseResult'] : null;
+        $payload->productId      = isset($amazonRequest['productId']) ? $amazonRequest['productId'] : null;
+        $payload->message        = isset($amazonRequest['message']) ? $amazonRequest['message'] : null;
 
-        return $status;
+        // XXX Setup
+        $payload->billingAgreementDetails = isset($amazonRequest['billingAgreementDetails']) ? $amazonRequest['billingAgreementDetails'] : null;
+        // XXX Charge
+        $payload->amazonOrderReferenceId = isset($amazonRequest['amazonOrderReferenceId']) ? $amazonRequest['amazonOrderReferenceId'] : null;
+        $payload->authorizationDetails = isset($amazonRequest['authorizationDetails']) ? $amazonRequest['authorizationDetails'] : null;
+
+        return $payload;
     }
 }

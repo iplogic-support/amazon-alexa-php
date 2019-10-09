@@ -13,6 +13,8 @@ class ConnectionsResponseRequest extends SystemRequest
     const NAME_UPSELL = 'Upsell';
     const NAME_BUY    = 'Buy';
     const NAME_CANCEL = 'CANCEL';
+    const NAME_SETUP  = 'Setup';
+    const NAME_CHARGE = 'Charge';
 
     /**
      * @var string|null
